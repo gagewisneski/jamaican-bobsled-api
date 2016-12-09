@@ -1,0 +1,2 @@
+class Jamaican < ApplicationRecord
+end
