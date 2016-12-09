@@ -7,10 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-100.times do
+150.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   position = Faker::Number.between(1,4)
   Jamaican.create(first_name: first_name, last_name: last_name, position: position)
 end
 
+400.times do
+  color = Faker::Color.color_name
+  size = Faker::Number.between(1,10)
+  jamaican_id = Faker::Number.between(1,150)
+  Shirt.create(color: color, size: size, jamaican_id: jamaican_id)
+end
