@@ -1,0 +1,1 @@
+json.partial! 'jamaican.json.jbuilder', jamaican: @jamaican
