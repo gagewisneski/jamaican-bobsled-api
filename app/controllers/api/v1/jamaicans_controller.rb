@@ -1,4 +1,4 @@
-class V2::JamaicansController < ApplicationController
+class Api::V1::JamaicansController < ApplicationController
   def index
     @jamaicans = Jamaican.all
   end
