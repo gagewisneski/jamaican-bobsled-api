@@ -19,4 +19,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/", to: "pages#home"
+  post "/", to: "pages#create"
+
 end

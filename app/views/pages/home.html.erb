@@ -1,0 +1,27 @@
+<div ng-app="app">
+  <div ng-controller="jamaicanCtrl" ng-init="setup()">
+    <h3>Add your own person</h3>
+    First: <input ng-model="firstName">
+    Last: <input ng-model="lastName">
+    Position: <input ng-model="position">
+    <button ng-click="addJamaican(firstName, lastName, position)">Add Jamaican</button>
+    <br>
+    <br>
+    <br>
+    Jamaican Bobsleders: {{ jamaicans.length }}<br>
+    Filter by name: <input ng-model="nameFilter"><br>
+    Filter by id: <input ng-model="idFilter"><br>
+    <table>
+    <tr>
+      <th ng-click="toggleOrder('id')">Id</th>
+      <th  ng-click="toggleOrder('name')">Name</th>
+      <th  ng-click="toggleOrder('bobsled_position')">Bobsled Position</th>
+    </tr>
+    <tr ng-repeat="jamaican in jamaicans | filter: {name: nameFilter, id: idFilter} | orderBy:orderAttribute:descending track by $index">
+      <td>{{ jamaican.id }}</td>
+      <td>{{ jamaican.name }}</td>
+      <td>{{ jamaican.bobsled_position }}</td>
+    </tr>
+    </table>
+  </div>
+</div>
